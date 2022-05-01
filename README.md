@@ -1,6 +1,6 @@
 Quick Convert!
 ---
-Python GUI with four common measurement converters. Built using tkinter
+Tkinter app containing four common measurement converters
 
 Contains converters for the following measurements: 
 - Temperature (Fahrenheit - Celsius - Kelvin)
