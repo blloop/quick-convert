@@ -132,6 +132,38 @@ def makeTemp():
     )
     placeWidgets(dropdown1, dropdown2, button)
 
+    ###
+
+    frm_entry = tk.Frame(win)
+    ent_temperature = tk.Entry(win)
+    btn_convert = tk.Button(
+        win, text="\N{RIGHTWARDS BLACK ARROW}",
+        command=fahrenheit_to_celsius
+    )
+    lbl_temp = tk.Label(
+        win, text="\N{DEGREE FAHRENHEIT}"
+    )
+    lbl_result = tk.Label(
+        win, text="\N{DEGREE CELSIUS}"
+    )
+
+    # Place elements in app using .place
+    frm_entry.place(height = 20, width = 100, x = 100, y = 100)
+    ent_temperature.place(height = 20, width = 20, x = 0, y = 40)
+    lbl_temp.place(height = 20, width = 20, x = 20, y = 40)
+    btn_convert.place(height = 40, width = 50, x = 200, y = 80)
+    lbl_result.place(height = 20, width = 100, x = 250, y = 100)
+
+def fahrenheit_to_celsius():
+    """Convert the value for Fahrenheit to Celsius and insert the
+    result into lbl_result.
+    """
+    fahrenheit = ent_temperature.get()
+    celsius = (5 / 9) * (float(fahrenheit) - 32)
+    lbl_result["text"] = f"{round(celsius, 2)} \N{DEGREE CELSIUS}"
+    
+    ###
+
 def makeDist():
 
     # Render conversion page
